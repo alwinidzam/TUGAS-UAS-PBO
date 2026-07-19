@@ -44,7 +44,6 @@ UAS/
 |       |-- mata_kuliah.dart
 |       |-- mata_kuliah_pilihan.dart
 |       `-- mata_kuliah_wajib.dart
-|-- pubspec.yaml
 `-- README.md
 ```
 
@@ -53,11 +52,11 @@ UAS/
 Masuk ke folder `UAS`, lalu jalankan:
 
 ```bash
-dart run
+dart bin/main.dart
 ```
 
 Alternatif:
 
 ```bash
-dart run bin/main.dart
+dart bin/uas.dart
 ```
