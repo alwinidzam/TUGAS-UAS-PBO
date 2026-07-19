@@ -4,11 +4,6 @@
 
 <br>
 
-![Dart](https://img.shields.io/badge/Dart-CLI-0175C2?style=for-the-badge&logo=dart&logoColor=white)
-![OOP](https://img.shields.io/badge/Object--Oriented-Programming-7C3AED?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Ready-22C55E?style=for-the-badge)
-![No YAML](https://img.shields.io/badge/Run-Without%20YAML-F97316?style=for-the-badge)
-
 <br><br>
 
 <b>Aplikasi terminal untuk mengelola data mata kuliah dengan konsep Pemrograman Berorientasi Objek di Dart.</b>
