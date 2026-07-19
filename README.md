@@ -4,6 +4,11 @@
 
 <br>
 
+![Dart](https://img.shields.io/badge/Dart-CLI-0175C2?style=for-the-badge&logo=dart&logoColor=white)
+![OOP](https://img.shields.io/badge/Object--Oriented-Programming-7C3AED?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Ready-22C55E?style=for-the-badge)
+![No YAML](https://img.shields.io/badge/Run-Without%20YAML-F97316?style=for-the-badge)
+
 <br><br>
 
 <b>Aplikasi terminal untuk mengelola data mata kuliah dengan konsep Pemrograman Berorientasi Objek di Dart.</b>
@@ -141,6 +146,65 @@ classDiagram
     Manager --> MataKuliah
 ```
 
+## Project Structure
+
+Struktur folder dibuat sederhana supaya alur program mudah dibaca: file di `bin/` menjadi pintu masuk aplikasi, sedangkan semua logic utama disimpan di `lib/`.
+
+| Layer | Fokus | Isi Utama |
+| --- | --- | --- |
+| `bin/` | Entry Point | Menjalankan program, menampilkan menu, membaca input terminal. |
+| `lib/controllers/` | Data Control | Mengatur tambah data, pencarian, total SKS, dan proses simpan. |
+| `lib/models/` | Data Model | Menyimpan bentuk object mata kuliah wajib dan pilihan. |
+| `lib/exceptions/` | Error Handling | Menangani input atau data yang tidak valid. |
+
+```text
+UAS/
+|-- bin/                                      # Entry point aplikasi CLI
+|   |-- main.dart                             # Menu utama, input user, output terminal
+|   `-- uas.dart                              # Launcher alternatif menuju main.dart
+|
+|-- lib/                                      # Logic inti aplikasi
+|   |-- controllers/
+|   |   `-- manager.dart                      # Mengelola koleksi data mata kuliah
+|   |
+|   |-- exceptions/
+|   |   `-- data_tidak_valid_exception.dart   # Custom exception untuk validasi
+|   |
+|   `-- models/
+|       |-- mata_kuliah.dart                  # Abstract class sebagai parent model
+|       |-- mata_kuliah_pilihan.dart          # Model mata kuliah pilihan
+|       `-- mata_kuliah_wajib.dart            # Model mata kuliah wajib
+|
+`-- README.md                                # Dokumentasi project
+```
+
+### File Responsibility
+
+| File | Peran | Detail |
+| --- | --- | --- |
+| `bin/main.dart` | Main Program | Mengatur menu, input user, tampilan tabel, pencarian, total data, dan simulasi simpan data. |
+| `bin/uas.dart` | Alternative Runner | Menjalankan `main.dart` lewat file runner yang lebih pendek. |
+| `lib/controllers/manager.dart` | Controller | Menyimpan daftar mata kuliah, mencegah kode duplikat, mencari data, menghitung total SKS, rata-rata SKS, dan ringkasan jenis. |
+| `lib/models/mata_kuliah.dart` | Base Model | Abstract class yang berisi property umum seperti kode, nama, SKS, jenis, dan keterangan. |
+| `lib/models/mata_kuliah_wajib.dart` | Child Model | Turunan `MataKuliah` untuk mata kuliah wajib dengan tambahan data semester. |
+| `lib/models/mata_kuliah_pilihan.dart` | Child Model | Turunan `MataKuliah` untuk mata kuliah pilihan dengan tambahan data bidang minat. |
+| `lib/exceptions/data_tidak_valid_exception.dart` | Custom Error | Exception buatan sendiri untuk menampilkan pesan validasi yang lebih jelas. |
+
+### Dependency Direction
+
+```mermaid
+flowchart LR
+    A[bin/main.dart] --> B[Manager]
+    A --> C[MataKuliahWajib]
+    A --> D[MataKuliahPilihan]
+    A --> E[DataTidakValidException]
+    B --> F[MataKuliah]
+    B --> E
+    C --> F
+    D --> F
+    F --> E
+```
+
 ## Terminal Preview
 
 ```text
@@ -156,28 +220,6 @@ classDiagram
 ----------------------------------------------------------------------------
 Pilih menu        :
 ```
-
-<details>
-<summary><b>Struktur Folder</b></summary>
-
-```text
-UAS/
-|-- bin/
-|   |-- main.dart
-|   `-- uas.dart
-|-- lib/
-|   |-- controllers/
-|   |   `-- manager.dart
-|   |-- exceptions/
-|   |   `-- data_tidak_valid_exception.dart
-|   `-- models/
-|       |-- mata_kuliah.dart
-|       |-- mata_kuliah_pilihan.dart
-|       `-- mata_kuliah_wajib.dart
-`-- README.md
-```
-
-</details>
 
 ## Run Project
 
