@@ -5,8 +5,6 @@
 *UAS Pemrograman Berorientasi Objek — Aplikasi CLI Dart*
 
 [![Dart](https://img.shields.io/badge/DART-CLI-C9A227?style=flat-square&labelColor=0B0F19&logo=dart&logoColor=C9A227)](https://dart.dev)
-[![Status](https://img.shields.io/badge/STATUS-SELESAI-C9A227?style=flat-square&labelColor=0B0F19)](#)
-[![Paradigm](https://img.shields.io/badge/PARADIGM-OOP-C9A227?style=flat-square&labelColor=0B0F19)](#)
 
 <sub>[01. Identitas](#01-identitas) · [02. Ringkasan](#02-ringkasan) · [03. Fitur](#03-fitur) · [04. Konsep OOP](#04-konsep-oop-yang-diterapkan) · [05. Arsitektur](#05-arsitektur) · [06. Struktur Proyek](#06-struktur-proyek) · [07. Preview Terminal](#07-preview-terminal) · [08. Menjalankan Proyek](#08-menjalankan-proyek)</sub>
 
